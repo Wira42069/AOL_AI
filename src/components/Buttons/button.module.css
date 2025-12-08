@@ -1,0 +1,89 @@
+/* Unique Styles for the Lime Button */
+
+.smallButt {
+  /* --- BASE STYLES --- */
+  background-color: #32CD32; /* Lime Green */
+  color: white;             /* White Text */
+  
+  /* --- APPEARANCE --- */
+  margin: 10px 10px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  
+  /* --- TRANSITION FOR SMOOTHNESS --- */
+  /* Ensures the scale and color changes are smooth and not instant */
+  transition: 
+    background-color 0.3s ease, 
+    transform 0.3s ease;
+}
+
+.smallButt:hover {
+  /* --- HOVER EFFECTS (Enlarge & Enlighten) --- */
+  
+  /* 1. ENLARGE (Scale up by 5%) */
+  transform: scale(1.05); 
+  
+  /* 2. ENLIGHTEN (Brighten the background color) */
+  background-color: #66FF66; /* Lighter/brighter lime */
+  
+  /* Optional: Add a slight shadow to enhance the "lifted" look */
+  box-shadow: 0 4px 10px rgba(50, 205, 50, 0.5); 
+}
+
+.smallButt:active {
+  /* Optional: Slight "press" effect when clicked */
+  transform: scale(0.98);
+}
+
+.bigButt {
+  /* --- BASE STYLES --- */
+  background-color: #32CD32; /* Lime Green */
+  color: white;             /* White Text */
+  
+  /* --- APPEARANCE --- */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 10px 10px;
+  padding: 10px 10px;
+  height: 150px;
+  width: 150px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  
+  /* --- TRANSITION FOR SMOOTHNESS --- */
+  /* Ensures the scale and color changes are smooth and not instant */
+  transition: 
+    background-color 0.3s ease, 
+    transform 0.3s ease;
+}
+
+.bigButt p {
+  padding-top: 15%;
+}
+
+.bigButt:hover {
+  /* --- HOVER EFFECTS (Enlarge & Enlighten) --- */
+  
+  /* 1. ENLARGE (Scale up by 5%) */
+  transform: scale(1.05); 
+  
+  /* 2. ENLIGHTEN (Brighten the background color) */
+  background-color: #66FF66; /* Lighter/brighter lime */
+  
+  /* Optional: Add a slight shadow to enhance the "lifted" look */
+  box-shadow: 0 4px 10px rgba(50, 205, 50, 0.5); 
+}
+
+.bigButt:active {
+  /* Optional: Slight "press" effect when clicked */
+  transform: scale(0.98);
+}
