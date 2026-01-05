@@ -1,0 +1,85 @@
+.box {
+    min-width: 500px;
+    padding: 16px;
+    border: 1px solid #daffc9;
+    border-radius: 8px;
+    background: #daffc9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+h3 {
+    font-size: larger;
+    color: #0f360f;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.content input,
+.content textarea {
+    width: 70%;
+    padding: 10px 12px;
+    border: 1px solid #daffc9;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.content input:focus,
+.content textarea:focus {
+    outline: none;
+    border-color: #0969da;
+    box-shadow: 0 0 0 2px rgba(9, 105, 218, 0.15);
+}
+
+select {
+    width: 75%;
+    border: 1px solid #daffc9;
+    border-radius: 6px;
+    padding: 8px 9px;
+    font-size: 15px;
+    color: #75759d;
+    font-family: inherit;
+}
+
+.submit {
+    width:20%;
+    height: 30px;
+    align-self: center;
+    border: 1px solid #daffc9;
+    border-radius: 15%;
+}
+
+.submit:hover {
+    transform: scale(1.05); 
+    background-color: #66FF66; 
+    box-shadow: 0 4px 10px rgba(50, 205, 50, 0.5); 
+}
+
+.submit:active {
+    transform: scale(0.98);
+}
+
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ddd;
+    border-top: 4px solid #4caf50;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
