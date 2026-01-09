@@ -109,7 +109,7 @@ function App() {
           recommendation={result?.recommendation}>
         </AnalysisYap>
         
-        <InputBox onSubmit={handleSubmit} loading={loading}>
+        <InputBox loading={loading}>
           <h3>Input Your Data</h3>
           <input type="number" placeholder="Age       (years)" value={age} min={0} max={100} onChange={(e) => setAge(e.target.value)}/>
           <select value={gender} onChange={(e) => setGender(e.target.value)}>
