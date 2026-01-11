@@ -1,89 +1,71 @@
-/* Unique Styles for the Lime Button */
-
+/* Small Button Styles */
 .smallButt {
-  /* --- BASE STYLES --- */
-  background-color: #32CD32; /* Lime Green */
-  color: white;             /* White Text */
-  
-  /* --- APPEARANCE --- */
-  margin: 10px 10px;
-  padding: 12px 24px;
+  background-color: #5D8219;
+  color: white;
+  width: 100%;
+  padding: 14px 20px;
   border: none;
   border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
-  
-  /* --- TRANSITION FOR SMOOTHNESS --- */
-  /* Ensures the scale and color changes are smooth and not instant */
   transition: 
     background-color 0.3s ease, 
     transform 0.3s ease;
 }
 
 .smallButt:hover {
-  /* --- HOVER EFFECTS (Enlarge & Enlighten) --- */
-  
-  /* 1. ENLARGE (Scale up by 5%) */
-  transform: scale(1.05); 
-  
-  /* 2. ENLIGHTEN (Brighten the background color) */
-  background-color: #66FF66; /* Lighter/brighter lime */
-  
-  /* Optional: Add a slight shadow to enhance the "lifted" look */
-  box-shadow: 0 4px 10px rgba(50, 205, 50, 0.5); 
+  transform: scale(1.03); 
+  background-color: #7C8733;
+  box-shadow: 0 4px 10px rgba(93, 130, 25, 0.5); 
 }
 
 .smallButt:active {
-  /* Optional: Slight "press" effect when clicked */
   transform: scale(0.98);
 }
 
+/* Big Button Styles */
 .bigButt {
-  /* --- BASE STYLES --- */
-  background-color: #32CD32; /* Lime Green */
-  color: white;             /* White Text */
-  
-  /* --- APPEARANCE --- */
+  background-color: #5D8219;
+  color: white;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  margin: 10px 10px;
-  padding: 10px 10px;
-  height: 150px;
-  width: 150px;
+  gap: 10px;
+  margin: 0;
+  padding: 20px 12px;
+  height: 130px;
+  width: 100%;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
   cursor: pointer;
-  
-  /* --- TRANSITION FOR SMOOTHNESS --- */
-  /* Ensures the scale and color changes are smooth and not instant */
   transition: 
     background-color 0.3s ease, 
     transform 0.3s ease;
 }
 
 .bigButt p {
-  padding-top: 15%;
+  margin: 0;
+  text-align: center;
+  line-height: 1.2;
+  font-size: 13px;
+}
+
+.bigButt svg {
+  flex-shrink: 0;
+  width: 35px;
+  height: 35px;
 }
 
 .bigButt:hover {
-  /* --- HOVER EFFECTS (Enlarge & Enlighten) --- */
-  
-  /* 1. ENLARGE (Scale up by 5%) */
-  transform: scale(1.05); 
-  
-  /* 2. ENLIGHTEN (Brighten the background color) */
-  background-color: #66FF66; /* Lighter/brighter lime */
-  
-  /* Optional: Add a slight shadow to enhance the "lifted" look */
-  box-shadow: 0 4px 10px rgba(50, 205, 50, 0.5); 
+  transform: scale(1.03); 
+  background-color: #7C8733;
+  box-shadow: 0 4px 15px rgba(93, 130, 25, 0.5); 
 }
 
 .bigButt:active {
-  /* Optional: Slight "press" effect when clicked */
   transform: scale(0.98);
 }
