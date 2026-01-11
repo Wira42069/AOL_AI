@@ -49,11 +49,10 @@ const UserInputPage = ({ onNavigate, onSubmitData }) => {
   const [weight, setWeight] = useState('');
   const [height, setHeight] = useState('');
   const [MUAC, setMUAC] = useState('');
-  const [calf, setCalf] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
-    if (!age || !gender || !weight || !height || !MUAC || !calf) {
+    if (!age || !gender || !weight || !height || !MUAC) {
       alert('Please fill in all input fields');
       return;
     }
@@ -66,7 +65,6 @@ const UserInputPage = ({ onNavigate, onSubmitData }) => {
       weight: Number(weight),
       height: Number(height),
       muac: Number(MUAC),
-      calf: Number(calf)
     };
 
     // Simulate API call
@@ -82,7 +80,7 @@ const UserInputPage = ({ onNavigate, onSubmitData }) => {
       <div className={styles.sidebar}>
         <div className={styles.header}>
           <h1 className={styles.logo}>NTra</h1>
-          <button className={styles.signupBtn}>Get started</button>
+          {/* <button className={styles.signupBtn}>Get started</button> */}
         </div>
         
         <div className={styles.content}>
@@ -92,10 +90,10 @@ const UserInputPage = ({ onNavigate, onSubmitData }) => {
           <div className={styles.offerings}>
             <p className={styles.offeringsTitle}>Our offerings</p>
             <div className={styles.buttonGrid}>
-              <BigButton onClick={() => onNavigate('visualize')}>
+              {/* <BigButton onClick={() => onNavigate('visualize')}>
                 <ChartsIcon />
                 <p>Charts</p>
-              </BigButton>
+              </BigButton> */}
               
               <BigButton onClick={() => onNavigate('analyze')}>
                 <NutritionIcon />
@@ -141,14 +139,6 @@ const UserInputPage = ({ onNavigate, onSubmitData }) => {
             value={MUAC} 
             min={0} 
             onChange={(e) => setMUAC(e.target.value)}
-          />
-          
-          <input 
-            type="number" 
-            placeholder="Mid-Upper Arm Circumference" 
-            value={calf} 
-            min={0} 
-            onChange={(e) => setCalf(e.target.value)}
           />
           
           <input 

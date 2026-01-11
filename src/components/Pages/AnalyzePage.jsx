@@ -60,37 +60,6 @@ const AnalyzePage = ({ onNavigate, userData }) => {
     let warning = null;
     let healthy = null;
 
-    if (bmi < 16) {
-      critical = {
-        risk_level: 'high',
-        summary: 'Critical',
-        recommendation: 'Severe malnutrition detected. Immediate medical attention required. BMI is critically low.'
-      };
-    } else if (bmi < 18.5) {
-      warning = {
-        risk_level: 'medium',
-        summary: 'Warning',
-        recommendation: 'Underweight condition detected. Consider increasing caloric intake and consulting a nutritionist.'
-      };
-    } else if (bmi < 25) {
-      healthy = {
-        risk_level: 'low',
-        summary: 'Healthy',
-        recommendation: 'Normal weight range. Maintain current dietary habits and regular physical activity.'
-      };
-    } else if (bmi < 30) {
-      warning = {
-        risk_level: 'medium',
-        summary: 'Warning',
-        recommendation: 'Overweight detected. Consider balanced diet and increased physical activity.'
-      };
-    } else {
-      critical = {
-        risk_level: 'high',
-        summary: 'Critical',
-        recommendation: 'Obesity detected. Medical consultation strongly recommended for weight management plan.'
-      };
-    }
 
     return { critical, warning, healthy };
   };
@@ -102,7 +71,7 @@ const AnalyzePage = ({ onNavigate, userData }) => {
       <div className={styles.sidebar}>
         <div className={styles.header}>
           <h1 className={styles.logo}>NTra</h1>
-          <button className={styles.signupBtn}>Get started</button>
+          {/* <button className={styles.signupBtn}>Get started</button> */}
         </div>
         
         <div className={styles.content}>
@@ -112,10 +81,10 @@ const AnalyzePage = ({ onNavigate, userData }) => {
           <div className={styles.offerings}>
             <p className={styles.offeringsTitle}>Our offerings</p>
             <div className={styles.buttonGrid}>
-              <BigButton onClick={() => onNavigate('visualize')}>
+              {/* <BigButton onClick={() => onNavigate('visualize')}>
                 <ChartsIcon />
                 <p>Charts</p>
-              </BigButton>
+              </BigButton> */}
               
               <BigButton onClick={() => onNavigate('analyze')}>
                 <NutritionIcon />
@@ -140,18 +109,6 @@ const AnalyzePage = ({ onNavigate, userData }) => {
               risk_level={analysis.critical?.risk_level}
               summary={analysis.critical?.summary}
               recommendation={analysis.critical?.recommendation}
-            />
-            
-            <AnalysisYap
-              risk_level={analysis.warning?.risk_level}
-              summary={analysis.warning?.summary}
-              recommendation={analysis.warning?.recommendation}
-            />
-            
-            <AnalysisYap
-              risk_level={analysis.healthy?.risk_level}
-              summary={analysis.healthy?.summary}
-              recommendation={analysis.healthy?.recommendation}
             />
           </div>
         </div>

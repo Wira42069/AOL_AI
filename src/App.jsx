@@ -25,8 +25,8 @@ function App() {
         return <UserInputPage onNavigate={handleNavigate} onSubmitData={handleSubmitData} />;
       case 'analyze':
         return <AnalyzePage onNavigate={handleNavigate} userData={userData} />;
-      case 'visualize':
-        return <VisualizePage onNavigate={handleNavigate} userData={userData} />;
+      // case 'visualize':
+      //   return <VisualizePage onNavigate={handleNavigate} userData={userData} />;
       default:
         return <LandingPage onNavigate={handleNavigate} />;
     }
