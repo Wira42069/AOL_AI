@@ -1,4 +1,4 @@
-# First create a new folder, then enter it in terminal, clone this repo, then enter the AI_AOL folder. After that, open it in Visual Studio Code, go to new terminal, then type this,
+# First create a new folder, then enter it in terminal, clone this repo, then enter the AOL_AI folder. After that, open it in Visual Studio Code, go to new terminal, then type this,
 
 npm install
 
