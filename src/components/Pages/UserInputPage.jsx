@@ -50,30 +50,70 @@ const UserInputPage = ({ onNavigate, onSubmitData }) => {
   const [height, setHeight] = useState('');
   const [MUAC, setMUAC] = useState('');
   const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState(null)
 
-  const handleSubmit = async () => {
+
+    const handleSubmit = async (e) => {
+    e.preventDefault() // stop page refresh
+
     if (!age || !gender || !weight || !height || !MUAC) {
-      alert('Please fill in all input fields');
-      return;
+      alert('Please fill in all input fields')
+      return
     }
 
-    setLoading(true);
+    setLoading(true)
 
-    const userData = {
-      age: Number(age),
-      gender,
-      weight: Number(weight),
-      height: Number(height),
-      muac: Number(MUAC),
-    };
+    console.log({
+        age,
+        gender,
+        weight,
+        height,
+        MUAC
+    })
 
-    // Simulate API call
-    setTimeout(() => {
-      onSubmitData(userData);
-      setLoading(false);
-      onNavigate('analyze');
-    }, 1000);
-  };
+    try {
+      const response = await fetch('http://localhost:3001/api/analyze', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          age: Number(age),
+          gender,
+          weight: Number(weight),
+          height: Number(height),
+          muac: Number(MUAC)
+        })
+      })
+
+      if (!response.ok){
+        throw new Error('Backend Error')
+      }
+
+      const results = await response.json()
+
+      console.log("AI response: \n", results)
+
+      setResult(results)
+
+      onSubmitData(results)
+
+      onNavigate('analyze')
+
+      setAge('')
+      setGender('')
+      setWeight('')
+      setHeight('')
+      setMUAC('')
+
+    } catch (err) {
+      console.error(err)
+      alert('Something went wrong. Please try again')
+    } finally {
+      setLoading(false)
+    }
+  }
+
 
   return (
     <div className={styles.container}>

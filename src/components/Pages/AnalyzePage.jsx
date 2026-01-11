@@ -44,27 +44,7 @@ const InputIcon = () => (
 );
 
 const AnalyzePage = ({ onNavigate, userData }) => {
-  // Calculate analysis based on userData
-  const analyzeData = () => {
-    if (!userData) {
-      return {
-        critical: null,
-        warning: null,
-        healthy: null
-      };
-    }
-
-    const bmi = userData.weight / ((userData.height / 100) ** 2);
-    
-    let critical = null;
-    let warning = null;
-    let healthy = null;
-
-
-    return { critical, warning, healthy };
-  };
-
-  const analysis = analyzeData();
+  
 
   return (
     <div className={styles.container}>
@@ -105,11 +85,11 @@ const AnalyzePage = ({ onNavigate, userData }) => {
           <h2 className={styles.sectionTitle}>Analyze</h2>
           
           <div className={styles.cardsContainer}>
-            <AnalysisYap
-              risk_level={analysis.critical?.risk_level}
-              summary={analysis.critical?.summary}
-              recommendation={analysis.critical?.recommendation}
-            />
+            <AnalysisYap 
+              risk_level={userData?.risk_level}
+              summary={userData?.summary}
+              recommendation={userData?.recommendation}>
+            </AnalysisYap>
           </div>
         </div>
       </div>
